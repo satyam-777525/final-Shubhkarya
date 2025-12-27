@@ -1,12 +1,12 @@
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
-  background: #f4f7f9;
+  background: rgba(226, 232, 240, 0.9);
 }
 
 .dashboard-main {
   margin-left: 220px;
-  padding: 2rem 2.5rem;
+  padding: 0.5rem 0.5rem;
   flex: 1;
   overflow-y: auto;
   min-height: 100vh;

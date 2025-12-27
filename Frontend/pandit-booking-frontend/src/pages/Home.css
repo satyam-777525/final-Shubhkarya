@@ -1,14 +1,14 @@
-/* Universal Box-Sizing for consistency */
+/* Universal Box-Sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Base styles for the entire application */
+/* Base */
 body {
   margin: 0;
   font-family: 'Inter', 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  background: #faf7f2; /* Soft cream background */
-  color: #2d1a05; /* Deep brown text */
+  background: #faf7f2;
+  color: #2d1a05;
   letter-spacing: 0.01em;
   line-height: 1.6;
 }
@@ -19,22 +19,23 @@ body {
   overflow-x: hidden;
   background: linear-gradient(120deg, #faf7f2 80%, #fffbe7 100%);
   box-shadow: 0 2px 24px rgba(247, 226, 177, 0.627);
-  padding-top: 95px; /* Space for fixed navbar */
+  padding-top: 95px;
 }
 
-/* --- Navbar Styles --- */
+/* ================= NAVBAR ================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 30px; /* Increased vertical padding to make it taller */
+  padding: 18px 30px;
   background: #fff;
   border-bottom: 1px solid #eee;
   position: fixed;
   top: 0;
-  left: 0; /* Ensure it spans full width */
+  left: 0;
   width: 100%;
-  z-index: 1000; /* High z-index to be always on top */
+  z-index: 1000;
   box-shadow: 0 2px 12px rgba(227, 163, 79, 0.08);
   transition: box-shadow 0.3s ease-in-out;
 }
@@ -74,15 +75,16 @@ body {
   white-space: nowrap;
 }
 
+/* Links + improved login button */
 .navbar-right a,
 .login-box {
-  margin-left: 22px;
+  margin-left: 26px;                  /* extra space before Login */
   text-decoration: none;
   color: #512700;
   font-weight: 600;
-  font-size: 1.07rem;
-  padding: 3px 2px;
-  transition: color 0.2s, border-bottom 0.2s;
+  font-size: 1.02rem;
+  padding: 0;
+  transition: color 0.2s, border-bottom 0.2s, transform 0.15s;
   position: relative;
   border-bottom: 2px solid transparent;
 }
@@ -92,19 +94,30 @@ body {
   border-bottom: 2px solid #d67f2a;
 }
 
+/* pill login button */
 .login-box {
   background: linear-gradient(90deg, #d67f2a 0%, #e0a143 100%);
   color: #fff;
-  padding: 9px 26px;
-  border-radius: 7px;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(218, 167, 93, 0.227);
+  padding: 8px 30px;                  /* taller + wider pill */
+  border-radius: 999px;               /* full pill shape */
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(218, 167, 93, 0.35);
   border: none;
   cursor: pointer;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- Hero Section --- */
+.login-box:hover {
+  box-shadow: 0 5px 16px rgba(218, 167, 93, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ================= HERO ================= */
+
 .hero {
   height: 85vh;
   min-height: 420px;
@@ -157,7 +170,7 @@ body {
 
 .book-btn,
 .get-started-btn {
-  padding: 12px 25px; /* Increased horizontal padding */
+  padding: 12px 25px;
   font-weight: 800;
   border: none;
   border-radius: 7px;
@@ -261,8 +274,8 @@ body {
 }
 
 
+/* ================= SERVICES ================= */
 
-/* Services Section */
 .services-container {
   padding: 60px 10vw;
   background: #fbf0d8;
@@ -282,8 +295,6 @@ body {
 }
 
 .services-container::before {
-  /* You MUST place an actual image file named pattern1.png in your public/images folder */
-  /* For example: background-image: url('/images/pattern1.png'); */
   top: 0;
   left: 0;
   width: 200px;
@@ -291,8 +302,6 @@ body {
 }
 
 .services-container::after {
-  /* You MUST place an actual image file named pattern2.png in your public/images folder */
-  /* For example: background-image: url('/images/pattern2.png'); */
   bottom: 0;
   right: 0;
   width: 200px;
@@ -331,7 +340,7 @@ body {
   width: 282px;
   min-height: 250px;
   box-shadow: 0 6px 22px rgba(198, 127, 27, 0.13);
-  transition: transform 0.34s cubic-bezier(.8, .3, 0, 1.43), box-shadow 0.35s;
+  transition: transform 0.34s cubic-bezier(.8,.3,0,1.43), box-shadow 0.35s;
   cursor: pointer;
   text-align: center;
   display: flex;
@@ -389,7 +398,7 @@ body {
   background: #c89023;
 }
 
-/* Service Details Grid (e.g., "4000+ Spiritual Guides") */
+/* service stats */
 .service-details-grid {
   display: flex;
   justify-content: center;
@@ -430,8 +439,8 @@ body {
   margin: 0;
 }
 
-/* --- Pooja Provided Section (Enhanced) --- */
-.poojas-section { /* Renamed for clarity and to avoid conflict with old .poojas */
+/* ===== Pooja Provided Section ===== */
+.poojas-section {
   padding: 80px 8vw;
   text-align: center;
   background: #fbf0d8;
@@ -439,12 +448,10 @@ body {
   overflow: hidden;
 }
 
-/* Decorative background elements for poojas section - REMOVED IMAGE REFERENCES */
 .poojas-section::before,
 .poojas-section::after {
   content: "";
   position: absolute;
-  /* background-image removed */
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.08;
@@ -469,7 +476,7 @@ body {
 .poojas-section h2 {
   font-size: 2.8rem;
   color: #a0522d;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 800;
   letter-spacing: 1.5px;
   font-family: 'Montserrat', sans-serif;
@@ -483,82 +490,93 @@ body {
   align-items: center;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
 
-.pooja-search-wrapper {
-  display: flex;
-  align-items: center;
+/* wrapper for marquee row */
+.pooja-rows-wrapper {
+  margin-top: 40px;
   position: relative;
-  height: 60px;
-  background: rgba(255, 197, 85, 0.1);
-  border-radius: 35px;
-  box-shadow: 0 6px 20px rgba(214, 127, 42, 0.15);
-  padding: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 197, 85, 0.2);
+  z-index: 1;
+  overflow: hidden;               /* hide overflow for clean loop */
 }
 
-.pooja-search-wrapper:hover {
-  background: rgba(255, 197, 85, 0.25);
-  box-shadow: 0 12px 35px rgba(214, 127, 42, 0.3);
-  border-color: rgba(255, 197, 85, 0.5);
+/* single looping strip */
+.pooja-row-loop {
+  display: inline-flex;
+  gap: 18px;
+  white-space: nowrap;
+  animation: pooja-scroll 35s linear infinite;
 }
 
-.search-pooja-icon {
-  font-size: 2.4rem;
-  color: #d67f2a;
-  padding: 12px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  z-index: 2;
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(214, 127, 42, 0.2);
-  transition: all 0.3s ease;
+/* pause when user hovers cards */
+/* .pooja-rows-wrapper:hover .pooja-row-loop {
+  animation-play-state: paused;
+} */
+
+/* move half the duplicated strip; gives perfect loop */
+@keyframes pooja-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.pooja-search-bar {
-  display: flex;
-  align-items: center;
-  position: relative;
-  pointer-events: auto;
-}
-
-.pooja-search-input {
+/* card styles */
+.pooja-item-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf2 100%);
+  border: 1px solid #f6e3c0;
+  padding: 24px 22px;
+  border-radius: 22px;
   width: 100%;
-  padding: 16px 30px;
-  padding-right: 60px;
-  border: none;
-  border-radius: 28px;
-  font-size: 1.25rem;
-  color: #3d220c;
-  background-color: #fcfafa;
-  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.08);
-  box-sizing: border-box;
-  transition: all 0.3s ease;
+  max-width: 360px;
+  height: auto;
+  box-shadow: 0 8px 25px rgba(198, 127, 27, 0.1);
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.pooja-search-input:focus {
-  outline: none;
-  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.12), 0 0 0 4px rgba(214, 127, 42, 0.4);
+.pooja-item-card:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(250, 173, 56, 0.3), 0 5px 25px rgba(195, 123, 17, 0.15);
+  border: 1px solid #ffcc70;
 }
 
-.search-input-icon {
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #d67f2a;
-  font-size: 1.6rem;
-  pointer-events: none;
+.pooja-item-card h3 {
+  padding: 0 10px;
+  color: #a86200;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.pooja-item-image {
+  width: calc(100% + 44px);
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+  margin-top: 0;
+  margin-left: -22px;
+  margin-right: -22px;
+  box-shadow: 0 4px 15px rgba(184, 133, 12, 0.1);
+  transition: transform 0.3s ease;
+  flex-grow: 1;
+}
+
+.pooja-item-card:hover .pooja-item-image {
+  transform: scale(1.03);
 }
 
 .loading-message,
@@ -569,78 +587,10 @@ body {
   font-weight: 500;
 }
 
-.pooja-card-grid { /* Renamed from .card-grid for distinction */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-  justify-items: center;
-  margin-top: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Specific styles for Pooja cards (pooja-item-card) in the "Pooja Provided" section */
-.pooja-item-card { /* Renamed for specificity */
-  background: linear-gradient(135deg, #ffffff 0%, #fffbf2 100%);
-  border: 1px solid #f6e3c0;
-  padding: 22px; /* Adjusted overall padding */
-  border-radius: 20px;
-  width: 100%;
-  max-width: 320px;
-  height: auto; /* Let content define height */
-  box-shadow: 0 8px 25px rgba(198, 127, 27, 0.1);
-  cursor: pointer; /* Indicate clickability */
-  text-align: center;
-  display: flex;
-  flex-direction: column; /* Stacks name above image */
-  align-items: center;
-  user-select: none;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
-}
-
-.pooja-item-card:hover {
-  transform: translateY(-7px) scale(1.02); /* Slight lift and scale on hover */
-  box-shadow: 0 15px 40px rgba(250, 173, 56, 0.3), 0 5px 25px rgba(195, 123, 17, 0.15); /* More pronounced shadow */
-  border: 1px solid #ffcc70;
-}
-
-.pooja-item-card h3 { /* Applies to h3 inside pooja-item-card */
-  padding: 0 10px; /* Horizontal padding, no top/bottom from h3 itself */
-  color: #a86200;
-  font-weight: 700;
-  font-size: 24px;
-  text-transform: capitalize;
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 0;
-  margin-bottom: 15px; /* Creates gap between name and image */
-  line-height: 1.3;
-  flex-shrink: 0;
-}
-
-/* Image inside Pooja card (pooja-item-image) */
-.pooja-item-image { /* Renamed for specificity */
-  width: calc(100% + 44px); /* Full bleed effect */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0 0 18px 18px; /* Rounded bottom corners, sharp top */
-  margin-top: 0; /* No negative margin needed anymore */
-  margin-left: -22px;
-  margin-right: -22px;
-  box-shadow: 0 4px 15px rgba(184, 133, 12, 0.1);
-  transition: transform 0.3s ease;
-  flex-grow: 1; /* Make image grow to fill available space */
-}
-
-.pooja-item-card:hover .pooja-item-image {
-  transform: scale(1.03); /* Slight image zoom on card hover */
-}
-
-
-/* Modal Overlay for Service Description */
-.pooja-description-overlay { /* Renamed for specificity */
+/* modal (same as before) */
+.pooja-description-overlay {
   position: fixed;
-  z-index: 1000; /* Higher z-index for modals */
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100vw;
@@ -652,7 +602,7 @@ body {
   backdrop-filter: blur(5px);
 }
 
-.pooja-description-modal { /* Renamed for specificity */
+.pooja-description-modal {
   background: linear-gradient(145deg, #fffaf0 0%, #fff7eb 100%);
   border-radius: 20px;
   max-width: 450px;
@@ -672,12 +622,12 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.modal-pooja-image { /* New class for image inside modal */
+.modal-pooja-image {
   width: 100%;
-  height: 220px; /* Fixed height for modal image */
+  height: 220px;
   object-fit: cover;
-  margin-bottom: 15px; /* Slightly more space */
-  border-radius: 8px; /* Slightly more rounded corners */
+  margin-bottom: 15px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -708,39 +658,71 @@ body {
   box-shadow: 0 6px 20px rgba(255, 197, 85, 0.4);
   transform: translateY(-2px);
 }
-/* --- Pandits Section --- */
-.pandits-section { /* Renamed from .pandits for consistency */
+
+/* mobile: disable marquee and stack cards */
+@media (max-width: 900px) {
+  .pooja-rows-wrapper {
+    overflow: visible;
+  }
+
+  .pooja-row-loop {
+    animation: none;
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: center;
+  }
+
+  .pooja-item-card {
+    max-width: 320px;
+  }
+
+  .pooja-item-image {
+    height: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pooja-item-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+/* ================= PANDITS ================= */
+
+.pandits-section {
   padding: 60px 8vw;
   text-align: center;
   background: #f9f2e3;
   position: relative;
-  z-index: 1; /* Above any potential background patterns */
+  z-index: 1;
 }
 
 .pandits-section h2 {
   color: #a44e1d;
-  font-size: 2.5rem; /* Larger font size */
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: 1.2px;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 40px; /* More space */
+  margin-bottom: 40px;
 }
 
-.pandits-grid { /* Renamed from .card-section for clarity */
-  display: grid; /* Use grid for layout */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
-  gap: 30px; /* Consistent gap */
+.pandits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
   justify-items: center;
   margin-top: 28px;
 }
 
-.pandit-card-item { /* Renamed for consistency */
+.pandit-card-item {
   background: white;
-  padding: 20px 15px; /* Adjusted padding */
-  border-radius: 12px; /* Slightly more rounded */
-  width: 100%; /* Take full grid cell width */
-  max-width: 250px; /* Max width for individual cards */
-  height: auto; /* Let content define height */
+  padding: 20px 15px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   box-shadow: 0 4px 14px rgba(239, 194, 92, 0.075);
   cursor: pointer;
   text-align: center;
@@ -756,31 +738,32 @@ body {
   border: 2px solid #ffc255;
 }
 
-.pandit-profile-image { /* New class for pandit images */
+.pandit-profile-image {
   width: 100%;
-  height: 140px; /* Slightly larger height */
+  height: 140px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px; /* More space below image */
+  margin-bottom: 15px;
   box-shadow: 0 2px 8px rgba(225, 174, 42, 0.071);
 }
 
 .pandit-card-item h3 {
-  margin-bottom: 8px; /* Adjusted spacing */
+  margin-bottom: 8px;
   color: #bb6200;
-  font-size: 20px; /* Slightly larger font */
+  font-size: 20px;
   font-weight: bold;
 }
 
 .pandit-card-item p {
   color: #5f4320;
   font-size: 15px;
-  margin: 3px 0; /* Adjusted vertical margin */
+  margin: 3px 0;
 }
 
-/* --- Enhanced Footer --- */
+/* ================= FOOTER ================= */
+
 .footer {
-  background: #f9d382; /* Warm, inviting background */
+  background: #f9d382;
   color: #512700;
   padding: 40px 20px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
@@ -829,7 +812,7 @@ body {
   margin-bottom: 20px;
 }
 
-.footer-copyright {
+.footeropyright {
   font-size: 13px;
   color: #776130;
   margin-top: 20px;
@@ -881,7 +864,8 @@ body {
   line-height: inherit;
 }
 
-/* --- Chatbot Toggle Button & Popup --- */
+/* ================= CHATBOT ================= */
+
 .chatbot-toggle-button {
   position: fixed;
   bottom: 25px;
@@ -928,7 +912,8 @@ body {
   z-index: 100;
 }
 
-/* --- Responsive Adjustments --- */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1100px) {
   .about-content {
     gap: 37px;
@@ -947,9 +932,8 @@ body {
     padding-right: 4vw;
   }
 
-  /* Specific service-card styles for OUR SERVICES section on smaller screens */
   .service-card {
-    width: 97vw; /* Example, adjust if it clashes with grid */
+    width: 97vw;
     max-width: 355px;
     min-width: 190px;
   }
@@ -964,123 +948,102 @@ body {
     align-items: center;
   }
 
-  /* Navbar Adjustments */
   .navbar-right a,
   .login-box {
     margin-left: 18px;
     font-size: 1rem;
   }
+
   .login-box {
-    padding: 7px 18px;
+    padding: 7px 22px;
   }
+
   .logo-text {
     font-size: 24px;
   }
+
   .logo-circle {
     width: 40px;
     height: 40px;
     margin-right: 10px;
   }
+
   .home-container {
     padding-top: 85px;
   }
 
-  /* Footer responsiveness */
   .footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
   .footer-section {
     min-width: unset;
     width: 100%;
     padding: 15px 0;
   }
+
   .footer-logo-area {
     justify-content: center;
   }
-  .footer-copyright {
-    text-align: center;
-  }
-  .footer-links ul {
-    text-align: center;
-  }
 
-  /* Responsive for service details grid */
   .service-details-grid {
     gap: 30px;
   }
+
   .detail-item {
     width: 250px;
     padding: 0;
   }
+
   .detail-icon {
     width: 80px;
     height: 80px;
   }
+
   .detail-item h4 {
     font-size: 20px;
   }
+
   .detail-item p {
     font-size: 14px;
   }
 
-  /* Responsive for poojas search bar */
   .poojas-section {
     padding: 60px 4vw;
   }
+
   .poojas-section h2 {
     font-size: 2.2rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
-  .poojas-header-wrapper {
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 50px;
+
+  .pooja-rows-wrapper {
+    overflow: visible;
   }
-  .pooja-search-wrapper {
-    height: 55px;
-    width: 100%;
-    max-width: 300px;
+
+  .pooja-row,
+  .pooja-row-left,
+  .pooja-row-right {
+    animation: none;
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: center;
   }
-  .pooja-search-wrapper .pooja-search-bar {
-    width: calc(100% - 60px);
-  }
-  .search-pooja-icon {
-    font-size: 2rem;
-    padding: 10px;
-  }
-  .pooja-search-input {
-    padding: 12px 25px;
-    padding-right: 50px;
-    font-size: 1.1rem;
-  }
-  .search-input-icon {
-    font-size: 1.4rem;
-    right: 18px;
-  }
-  .pooja-card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
+
   .pooja-item-card {
-    max-width: 300px;
-    padding: 25px 20px;
-    border-radius: 18px;
+    max-width: 320px;
   }
+
   .pooja-item-image {
-    height: 180px;
-    margin-top: 0;
-    margin-left: -20px;
-    margin-right: -20px;
+    height: 210px;
   }
-  .pooja-item-card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
+
   .pandits-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+
   .pandit-card-item {
     max-width: 230px;
   }
@@ -1096,31 +1059,36 @@ body {
     padding-left: 8px;
     padding-right: 8px;
   }
+
   .logo-center img {
     width: 95px;
     height: 95px;
   }
+
   .main-heading {
     font-size: 26px;
   }
+
   .tagline {
     font-size: 18px;
   }
+
   .hero-buttons {
     flex-direction: column;
     gap: 15px;
   }
+
   .book-btn,
   .get-started-btn {
     font-size: 18px;
     width: 100%;
     padding: 10px 15px;
   }
+
   .section-title {
     font-size: 23px;
   }
 
-  /* Chatbot Responsive */
   .chatbot-popup {
     width: 90vw;
     height: 70vh;
@@ -1128,129 +1096,114 @@ body {
     right: 5vw;
     left: 5vw;
   }
+
   .chatbot-toggle-button {
     bottom: 15px;
     right: 15px;
     width: 50px;
     height: 50px;
   }
+
   .chatbot-icon {
     width: 30px;
     height: 30px;
   }
 
-  /* Navbar Adjustments */
   .navbar {
     padding: 10px 15px;
   }
+
   .logo-circle {
     width: 35px;
     height: 35px;
     margin-right: 8px;
   }
+
   .logo-text {
     font-size: 18px;
   }
+
   .navbar-right {
     display: none;
   }
+
   .login-box {
     display: block;
     margin-left: auto;
-    padding: 6px 14px;
+    padding: 6px 16px;
   }
+
   .home-container {
     padding-top: 70px;
   }
 
-  /* Footer responsiveness */
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-section {
-    min-width: unset;
-    width: 100%;
-    padding: 15px 0;
-  }
-  .footer-logo-area {
-    justify-content: center;
-  }
-  .footer-copyright {
-    text-align: center;
-  }
-  .footer-links ul {
-    text-align: center;
-  }
-
-  /* Further small screen adjustments */
-  .poojas-header-wrapper {
-    gap: 10px;
-  }
-  .pooja-search-wrapper {
-    height: 50px;
-  }
-  .search-pooja-icon {
-    font-size: 1.6rem;
-  }
-  .pooja-search-input {
-    font-size: 1rem;
-  }
-  .search-input-icon {
-    font-size: 1.2rem;
-  }
-  .pooja-card-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
   .pooja-item-card {
     max-width: 90%;
     margin: 0 auto;
   }
-  .pooja-item-image {
-    height: 160px;
-    margin-top: 0;
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-  .pooja-item-card h3 {
-    font-size: 24px;
-  }
+
   .pandits-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .pandit-card-item {
     max-width: 90%;
     margin: 0 auto;
   }
+
   .pandit-profile-image {
     height: 120px;
   }
-  .service-description-modal {
+
+  .pooja-description-modal {
     max-width: 90vw;
     padding: 30px 20px;
     border-radius: 15px;
   }
-  .service-description-modal h3 {
+
+  .pooja-description-modal h3 {
     font-size: 24px;
   }
-  .service-description-modal p {
+
+  .pooja-description-modal p {
     font-size: 15px;
   }
+
   .close-btn {
     padding: 10px 30px;
     font-size: 1rem;
   }
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 11px;
   background: #ffe790;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #fcdfb0;
   border-radius: 6px;
+}
+/* ===== FINAL OVERRIDE FOR LOGIN BUTTON (PUT AT END OF FILE) ===== */
+.navbar-right .login-box {
+  background: linear-gradient(90deg, #d67f2a 0%, #e0a143 100%) !important;
+  color: #fff !important;
+  padding: 8px 32px !important;        /* taller + wider */
+  margin-left: 30px !important;        /* more gap from "Contact" */
+  border-radius: 999px !important;     /* full pill */
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  box-shadow: 0 3px 12px rgba(218, 167, 93, 0.45) !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.03em;
+}
+
+.navbar-right .login-box:hover {
+  box-shadow: 0 5px 18px rgba(218, 167, 93, 0.55) !important;
+  transform: translateY(-1px);
 }

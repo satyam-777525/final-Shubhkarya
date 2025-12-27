@@ -140,7 +140,7 @@ export default function Signup() {
 
   const backgroundStyle = {
     minHeight: '100vh',
-    backgroundImage: `linear-gradient(120deg,rgba(40,12,60,0.38),rgba(80,40,70,0.23)), url('/images/i4.jpeg')`,
+    backgroundImage: `linear-gradient(135deg, #fac56999 50%, #ffe6c633 50%), url('/images/ganeshji.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -169,6 +169,7 @@ export default function Signup() {
       <form onSubmit={handleSubmit} className="glass-form" data-aos="zoom-in" autoComplete="off">
         <img src="/images/subh.png" alt="Portal Logo" className="signup-logo" />
         <h2>Create Your Account</h2>
+        {/* <h3>Welcome Devotee!</h3> */}
         <p className="step-indicator">Step {step} of 3</p>
         <AnimatePresence mode="wait">
           <motion.div

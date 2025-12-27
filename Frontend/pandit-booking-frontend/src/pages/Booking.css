@@ -178,7 +178,7 @@
   transition: background 0.19s, box-shadow 0.2s, color 0.15s;
 }
 .primary-btn {
-  background: linear-gradient(91deg, #ffc678 12%, #e4762a 98%);
+  background: linear-gradient(91deg, #e49d3b 12%, #e4762a 98%);
   color: #fff8f5;
   border: 1.2px solid #e78c30;
   box-shadow: 0 1.5px 14px #ee901645;

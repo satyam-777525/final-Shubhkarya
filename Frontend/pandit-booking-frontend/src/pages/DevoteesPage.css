@@ -1,113 +1,365 @@
-.devotees-filters {
+/* Page shell aligned with Pandits page */
+.devotees-page {
+  padding: 16px 24px 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #111827;
+}
+
+/* Breadcrumb */
+.devotees-topbar {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.crumb-main {
+  color: #6b7280;
+}
+
+.crumb-current {
+  color: #fb923c; /* orange */
+  font-weight: 600;
+}
+
+.crumb-separator {
+  color: #d1d5db;
+}
+
+/* Header (mirrors Pandits header but for Devotees) */
+.devotees-header {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 2.8fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.devotees-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.devotees-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.devotees-title-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at 0 0, #ffedd5 0, #fb923c 40%, #f97316 100%);
+  font-size: 22px;
+}
+
+.devotees-title-row h2 {
+  font-size: 40px;
+  font-weight: 1000;
+  margin-bottom: 2px;
+}
+
+.devotees-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.devotees-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff7ed; /* light orange */
+  color: #9a3412;
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Header stats card */
+.devotees-header-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.devotees-stats {
+  display: flex;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
+.stat-chip {
+  min-width: 90px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+}
+
+.stat-label {
+  display: block;
+  color: #6b7280;
+}
+
+.stat-value {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.stat-chip--success {
+  background: rgba(249, 115, 22, 0.08);        /* orange tint */
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.devotees-header-note {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* Filters (same style as Pandits, orange theme) */
+.filters-section {
+  margin-bottom: 22px;
+}
+
+.filters-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.devotees-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
 .devotees-filters input {
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: 1px solid #bbb;
-  font-size: 1rem;
-  min-width: 180px;
-  flex-shrink: 1;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  flex: 1 1 170px;
+  min-width: 150px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  background-color: #f9fafb;
+}
+
+.devotees-filters input::placeholder {
+  color: #9ca3af;
+}
+
+.devotees-filters input:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(248, 153, 60, 0.25);
+  background-color: #ffffff;
 }
 
 .devotees-filters button {
   border: none;
-  background: #2980b9;
+  background: linear-gradient(135deg, #f97316, #fb923c);
   color: #fff;
-  border-radius: 6px;
-  padding: 7px 16px;
+  border-radius: 999px;
+  padding: 8px 20px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.25s ease;
+  transition: background 0.2s, transform 0.15s ease, box-shadow 0.15s ease;
   flex-shrink: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.3);
 }
 
 .devotees-filters button:hover {
-  background: #1c5980;
+  background: linear-gradient(135deg, #ea580c, #f97316);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(249, 115, 22, 0.4);
+}
+
+/* List section */
+.devotees-cards-section {
+  min-height: 200px;
 }
 
 .devotees-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.7rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
 }
 
-.devotee-card {
-  background: white;
-  border-radius: 14px;
-  padding: 1.3rem 1.6rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+.devotees-empty {
+  padding: 32px 18px;
+  text-align: center;
+  border-radius: 18px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+}
+
+.devotees-empty button {
+  margin-top: 12px;
+  border: none;
+  border-radius: 999px;
+  padding: 7px 16px;
+  background-color: #111827;
+  color: #f9fafb;
   cursor: pointer;
-  outline: none;
-  user-select: none;
-  transition: box-shadow 0.3s ease, transform 0.2s;
+  font-size: 0.85rem;
 }
 
-.devotee-card:hover,
-.devotee-card:focus {
-  box-shadow: 0 12px 36px rgba(39, 174, 96, 0.18);
-  transform: translateY(-4px);
+/* Card layout similar to Pandits two-column */
+.devotee-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 1.1rem 1.3rem;
+  border: 1px solid #e5e7eb;
 }
 
-.devotee-card p {
-  margin: 0 0 0.4rem 0;
-  color: #34495e;
-  font-size: 1.1rem;
-  font-weight: 600;
+.devotee-card-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* LEFT column */
+.devotee-card-left {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.devotee-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 0 0, #ffedd5 0, #fb923c 40%, #ea580c 100%);
+  color: #f9fafb;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.devotee-main-info {
+  flex: 1;
+}
+
+.devotee-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.devotee-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* RIGHT column with editable fields */
+.devotee-card-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.devotee-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.8rem 1rem;
 }
 
 .devotee-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.9rem;
 }
 
 .devotee-field label {
   font-weight: 600;
-  margin-bottom: 0.3rem;
-  color: #2980b9;
-  user-select: none;
+  margin-bottom: 0.2rem;
+  color: #f97316; /* orange labels */
 }
 
 .devotee-field input {
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #bbb;
-  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
 }
 
+/* actions */
 .devotee-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   margin-top: 0.6rem;
-  justify-content: flex-start;
 }
 
 .devotee-actions button {
   border: none;
-  background: #2980b9;
-  color: #fff;
-  padding: 9px 22px;
-  border-radius: 8px;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.25s ease;
+  color: #f9fafb;
+  background-color: #f97316; /* primary orange button */
 }
 
-.devotee-actions button:hover {
-  background: #1c5980;
+.devotee-actions button:last-child {
+  background-color: #6b7280; /* neutral for Cancel */
 }
 
-@media (max-width: 740px) {
-  .devotees-cards-grid {
+.devotee-actions button:hover:first-child {
+  background-color: #ea580c;
+}
+
+.devotee-actions button:hover:last-child {
+  background-color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .devotees-page {
+    padding: 14px 14px 24px;
+  }
+
+  .devotees-header {
     grid-template-columns: 1fr;
   }
-  .devotees-filters {
-    justify-content: flex-start;
+
+  .devotee-card-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .devotee-card-left {
+    margin-bottom: 6px;
   }
 }
